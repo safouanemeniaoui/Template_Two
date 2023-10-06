@@ -1118,6 +1118,9 @@ footer .container div {
   margin-left: -20px;
   margin-bottom: 40px;
 }
+footer .container div a {
+  text-decoration: none;
+}
 footer .container div i {
   padding-left: 20px;
   font-size: 20px;
