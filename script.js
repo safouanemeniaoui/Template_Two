@@ -55,9 +55,7 @@ console.log(dots.children);
 let tab = ["url(images/im3.jpg)", "url(images/im4.jpg)", "url(images/im2.jpg)"];
 let i = 1;
 goLeft.onclick = function () {
-  console.log("left");
   i <= 0 ? (i = 3) : i;
-  console.log(tab[i - 1]);
   landing.style.backgroundImage = tab[i - 1];
   for (let j = 0; j < dots.children.length; j++) {
     dots.children[j].classList.remove("active");
@@ -66,9 +64,7 @@ goLeft.onclick = function () {
   i--;
 };
 goRight.onclick = function () {
-  console.log("right");
   i >= 2 ? (i = -1) : i;
-  console.log(tab[i + 1]);
   landing.style.backgroundImage = tab[i + 1];
   for (let j = 0; j < dots.children.length; j++) {
     dots.children[j].classList.remove("active");
