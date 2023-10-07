@@ -19,7 +19,7 @@
       <div class="container">
         <a class="logo" href="#"><img src="images/logo.png" alt="" /></a>
         <nav>
-          <i class="fa-solid fa-bars toogle-menu"></i>
+          <i class="fa-solid fa-bars toggle-menu"></i>
           <ul class="mobile">
             <li><a class="active" href="#home">home</a></li>
             <li><a href="#services">services</a></li>
@@ -29,7 +29,8 @@
             <li><a href="#contact">contact</a></li>
           </ul>
           <div class="form">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search toggle" />
           </div>
         </nav>
       </div>
@@ -51,10 +52,10 @@
         </div>
       </div>
       <div class="arrow">
-        <i class="fa-solid fa-chevron-left arrow-left"></i>
-        <i class="fa-solid fa-chevron-right arrow-left"></i>
+        <i class="fa-solid fa-chevron-left arrow-left go-left"></i>
+        <i class="fa-solid fa-chevron-right arrow-left go-right"></i>
       </div>
-      <ul>
+      <ul class="dots">
         <li></li>
         <li class="active"></li>
         <li></li>
@@ -218,12 +219,12 @@
     </div>
     <div class="media">
       <video autoplay muted loop>
-        <source src="media/bird.mp4" type="video/mp4" />
+        <source src="media/oldcar.mp4" type="video/mp4" />
       </video>
       <div class="description">
         <p>super awesome video here</p>
         <p>it's all you need</p>
-        <p>see more</p>
+        <a href="#">see more</a>
       </div>
     </div>
     <div class="about" id="about">
@@ -445,6 +446,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="scroll show">
+      <i class="fa-solid fa-jet-fighter-up scroll-up"></i>
     </div>
     <footer>
       <div class="container">

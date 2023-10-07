@@ -103,31 +103,42 @@ header nav ul li a:hover {
   border-bottom: 1px solid var(--main-color);
 }
 header .form i,
-header .toogle-menu {
+header .toggle-menu {
   color: white;
   font-size: 18px;
   padding: 10px 20px;
   border-left: 1px solid white;
+  cursor: pointer;
 }
-@media (min-width: 768px) {
-  header .toogle-menu {
+header .form .search {
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+}
+header .form .toggle {
+  display: none;
+}
+@media (min-width: 992px) {
+  header .toggle-menu {
     display: none;
   }
 }
-
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   header nav {
     gap: 0;
   }
   header .form i,
-  header .toogle-menu {
+  header .toggle-menu {
     padding-right: 15px;
     padding-left: 15px;
   }
   header .logo img {
     width: 70%;
   }
-  header .toogle-menu {
+  header .toggle-menu {
     border: none;
   }
   header nav ul {
@@ -147,14 +158,24 @@ header .toogle-menu {
     padding: 15px 10px;
   }
 }
+@media (max-width: 767px) {
+  header .form .search {
+    position: absolute;
+    width: calc(100% - 10px);
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
 /* End Header */
 /* Start Landing */
 .landing {
   min-height: 100vh;
   background-color: rgb(15, 0, 42);
-  background-image: url(../images/landing.jpg);
+  background-image: url(../images/im4.jpg);
   background-size: cover;
-  z-index: -1;
+  /* z-index: -1; */
+  transition: 0.3s;
   position: relative;
 }
 .overlay {
@@ -210,6 +231,16 @@ header .toogle-menu {
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
+}
+.landing .arrow i {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.landing .arrow i:hover {
+  background-color: white;
+  color: black;
 }
 @media (max-width: 767px) {
   .landing .arrow {
@@ -322,7 +353,7 @@ header .toogle-menu {
 /* Start Features*/
 .features {
   background-color: black;
-  background-image: url(../images/design-features.jpg);
+  background-image: url(../images/im8.jpg);
   background-size: cover;
   position: relative;
   z-index: -2;
@@ -507,7 +538,11 @@ header .toogle-menu {
   text-transform: capitalize;
   font-size: 18px;
 }
-.media .description p:last-of-type {
+.media .description a {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
   text-transform: uppercase;
   background-color: black;
   width: fit-content;
@@ -551,6 +586,7 @@ header .toogle-menu {
   background-color: black;
   background-image: url(../images/im2.jpg);
   background-size: cover;
+  background-position-y: 40px;
   position: relative;
 }
 .statistics:after {
@@ -1071,6 +1107,30 @@ textarea::placeholder {
   }
 }
 /* End Contact*/
+/* Start Scroll*/
+.scroll {
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  bottom: 50px;
+  z-index: 1;
+}
+.scroll i {
+  font-size: 30px;
+  padding: 10px;
+  color: var(--main-color);
+  width: fit-content;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.scroll i:hover {
+  color: rgb(3, 139, 144);
+}
+.show {
+  display: none;
+}
+
+/* End Scroll*/
 /* Start footer*/
 
 footer {
