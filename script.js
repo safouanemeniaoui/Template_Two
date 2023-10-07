@@ -52,11 +52,7 @@ let goRight = document.querySelector(".go-right");
 let dots = document.querySelector(".dots");
 console.log(dots.children);
 
-let tab = [
-  "url(../images/im3.jpg)",
-  "url(../images/im4.jpg)",
-  "url(../images/im2.jpg)",
-];
+let tab = ["url(images/im3.jpg)", "url(images/im4.jpg)", "url(images/im2.jpg)"];
 let i = 1;
 goLeft.onclick = function () {
   console.log("left");
