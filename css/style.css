@@ -240,7 +240,8 @@ header .form .toggle {
 }
 .landing .arrow i:hover {
   background-color: white;
-  color: black;
+  color: var(--main-color);
+  border-radius: 10px;
 }
 @media (max-width: 767px) {
   .landing .arrow {
@@ -614,6 +615,7 @@ header .form .toggle {
   padding: 50px;
   color: white;
 }
+
 @media (max-width: 991px) {
   .stat-lists .stat {
     width: 50%;
@@ -645,6 +647,7 @@ header .form .toggle {
 }
 .stat-lists .stat p:last-of-type {
   text-transform: capitalize;
+  font-size: 14px;
 }
 /* End Statistics*/
 /* Start Skills*/
