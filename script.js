@@ -58,9 +58,9 @@ window.onscroll = function () {
   let mail = stat[2].children[1].innerHTML;
   let awards = stat[3].children[1].innerHTML;
 
-  if (window.scrollY > 5000) {
+  if (window.scrollY > 4000) {
     function countUpCofee() {
-      if (coffee < 1236) {
+      if (coffee < 536) {
         ++coffee;
         stat[0].children[1].innerHTML = coffee;
       } else {
@@ -76,7 +76,7 @@ window.onscroll = function () {
       }
     }
     function countUpMail() {
-      if (mail < 1743) {
+      if (mail < 743) {
         ++mail;
         stat[2].children[1].innerHTML = mail;
       } else {
@@ -91,10 +91,10 @@ window.onscroll = function () {
         clearInterval(counterA);
       }
     }
-    let counterC = setInterval(countUpCofee, 2);
+    let counterC = setInterval(countUpCofee, 10);
     let counterP = setInterval(countUpProjects, 10);
-    let counterM = setInterval(countUpMail, 2);
-    let counterA = setInterval(countUpAwards, 100);
+    let counterM = setInterval(countUpMail, 10);
+    let counterA = setInterval(countUpAwards, 50);
   }
 };
 
