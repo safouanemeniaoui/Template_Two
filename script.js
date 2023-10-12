@@ -5,6 +5,9 @@ let searchField = document.querySelector(".search");
 let myScroll = document.querySelector(".scroll");
 let scrollUp = document.querySelector(".scroll-up");
 let stat = document.querySelectorAll(".stat");
+let section = document.querySelector(".statistics");
+let skills = document.querySelectorAll(".skills-bar span");
+let sectionSkill = document.querySelector(".skill");
 
 toogleMenu.onclick = function () {
   mobile.classList.toggle("menu");
@@ -16,6 +19,8 @@ mobile.onclick = function (e) {
   }
   e.target.classList.add("active");
 };
+
+/* Start Search */
 
 searchIcon.onclick = function () {
   searchField.classList.toggle("toggle");
@@ -36,6 +41,8 @@ searchField.onblur = function () {
   }
 };
 
+/* End Search */
+
 function home() {
   for (let i = 0; i < mobile.children.length; i++) {
     mobile.children[i].children[0].classList.remove("active");
@@ -43,60 +50,59 @@ function home() {
   mobile.children[0].children[0].classList.add("active");
 }
 
+let started = false;
+let special = document.querySelector(".special");
+
 window.onscroll = function () {
-  if (window.scrollY < 500) {
+  // --> Scroll to Top
+
+  if (window.scrollY < document.documentElement.clientHeight / 2) {
     myScroll.classList.add("show");
   } else {
     myScroll.classList.remove("show");
   }
+
+  // --> Active home link
+
   if (window.scrollY === 0) {
     setTimeout(home, 1000);
   }
 
-  let coffee = stat[0].children[1].innerHTML;
-  let projects = stat[1].children[1].innerHTML;
-  let mail = stat[2].children[1].innerHTML;
-  let awards = stat[3].children[1].innerHTML;
+  // --> Increase Numbers On Scrolling section Statistics
 
-  if (window.scrollY > 4000) {
-    function countUpCofee() {
-      if (coffee < 536) {
-        ++coffee;
-        stat[0].children[1].innerHTML = coffee;
-      } else {
-        clearInterval(counterC);
-      }
+  if (window.scrollY >= section.offsetTop - 400) {
+    if (!started) {
+      stat.forEach((ele) => count(ele.children[1]));
     }
-    function countUpProjects() {
-      if (projects < 256) {
-        ++projects;
-        stat[1].children[1].innerHTML = projects;
-      } else {
-        clearInterval(counterP);
-      }
-    }
-    function countUpMail() {
-      if (mail < 743) {
-        ++mail;
-        stat[2].children[1].innerHTML = mail;
-      } else {
-        clearInterval(counterM);
-      }
-    }
-    function countUpAwards() {
-      if (awards < 17) {
-        ++awards;
-        stat[3].children[1].innerHTML = awards;
-      } else {
-        clearInterval(counterA);
-      }
-    }
-    let counterC = setInterval(countUpCofee, 10);
-    let counterP = setInterval(countUpProjects, 10);
-    let counterM = setInterval(countUpMail, 10);
-    let counterA = setInterval(countUpAwards, 50);
+    started = true;
+  }
+
+  // --> Scroll Progress
+  let height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  let result = Math.ceil((scrollY / height) * 100);
+  special.style.backgroundImage = `linear-gradient(to right,var(--main-color) ${result}%,transparent ${result}%)`;
+
+  //--> skills bar
+  if (window.scrollY >= sectionSkill.offsetTop - 400) {
+    skills.forEach((el) => (el.style.width = el.dataset.set));
   }
 };
+
+/* Start Increase Numbers On Scrolling */
+
+function count(el) {
+  let goal = el.dataset.set;
+  let counter = setInterval(() => {
+    el.textContent++;
+    if (el.textContent == goal) {
+      clearInterval(counter);
+    }
+  }, 2000 / goal);
+}
+
+/* End Increase Numbers On Scrolling */
 
 scrollUp.onclick = function () {
   window.scrollTo({
